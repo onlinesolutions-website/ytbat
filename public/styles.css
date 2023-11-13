@@ -126,6 +126,7 @@ form button:hover, .profile-edit-form button:hover {
 .video-container {
     flex: 0 0 auto;
     margin: 10px;
+    text-align: center; /* Center the content inside each video container */
 }
 
 .vs-symbol {
@@ -138,10 +139,11 @@ form button:hover, .profile-edit-form button:hover {
     height: 480px;
     border-radius: 10px;
     overflow: hidden;
+    margin-bottom: 20px; /* Space between the video and the vote button */
 }
 
 /* Button Styles */
-.button {
+.button, .vote-button {
     display: inline-block;
     padding: 10px 20px;
     margin: 5px;
@@ -154,7 +156,7 @@ form button:hover, .profile-edit-form button:hover {
     margin-top: 20px;
 }
 
-.button:hover {
+.button:hover, .vote-button:hover {
     background-color: #000000;
 }
 
@@ -245,6 +247,7 @@ form button:hover, .profile-edit-form button:hover {
 form .submit-button {
     margin-top: 20px; /* Space above the submit button */
 }
+
 button {
     padding: 10px 15px;
     background-color: #ffffff;
@@ -253,8 +256,43 @@ button {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
- 
 }
+
 button:hover {
     background-color: #a3201d;
+}
+/* Video Container */
+.video-container {
+    flex: 0 0 auto;
+    margin: 10px;
+    text-align: center; /* Center the content inside each video container */
+    position: relative; /* Positioning context for the vote button */
+}
+
+/* Video Frame */
+.video-container iframe, .video-frame {
+    width: 720px;
+    height: 480px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Vote Button */
+.vote-button {
+    display: block; /* Make the button a block element */
+    width: auto; /* Auto width based on content */
+    padding: 10px 20px;
+    margin: 20px auto; /* Center the button */
+    background-color: #c4302b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.vote-button:hover {
+    background-color: #000000;
 }
