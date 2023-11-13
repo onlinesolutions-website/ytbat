@@ -44,12 +44,16 @@
                 </div>
             </div>
         </div>
-    </main>
+        <button onclick="goBack()">Go Back</button></main>
 
     <footer>
         <p>Copyright © 2023 YouTube Battles</p>
     </footer>
-
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
     <script src="https://js.stripe.com/v3/"></script>
     <script src="purchase-tokens.js"></script>
 </body>

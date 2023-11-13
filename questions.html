@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Type Questionnaire</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include your styles.css file here -->
+    <style>
+        /* Add this section for the Questions.html page */
+        
+        /* Questionnaire Container */
+        .questionnaire-container {
+            background-color: white;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 1280px;
+            text-align: left; /* Align the form elements to the left */
+        }
+        
+        /* Questionnaire Title */
+        .questionnaire-title {
+            color: #c4302b;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        /* Questionnaire Questions */
+        .question {
+            margin-bottom: 20px;
+        }
+        
+        /* Ensure equal spacing for all form elements */
+        .question input[type='text'],
+        .question textarea,
+        .question select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        
+        /* Center the Submit button */
+        .questionnaire-submit-button {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 120px;
+            background-color: #c4302b;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        /* Hover effect for Submit button */
+        .questionnaire-submit-button:hover {
+            background-color: #000000;
+        }
+    </style>
+</head>
+<body><header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="battle.html">Battle & Vote</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="purchase-tokens.html">Token Store</a></li>
+        </ul>
+    </nav>
+</header>
+    <!-- Add the following code for the questionnaire -->
+    <div class="questionnaire-container">
+        <h2 class="questionnaire-title">Content Type Questionnaire</h2>
+        <!-- Add your questionnaire questions here -->
+        <div class="question">
+            <label for="question1">1. What topics or themes do you frequently explore in your videos or performances?</label>
+            <textarea id="question1" name="question1" rows="4" required></textarea>
+        </div>
+        
+        <div class="question">
+            <label for="question2">2. What is your target audience's age group or demographics?</label>
+            <input type="text" id="question2" name="question2" required>
+        </div>
+        
+        <div class="question">
+            <label for="question3">3. Do you primarily create original music, cover songs, or a mix of both as a musician?</label>
+            <input type="text" id="question3" name="question3" required>
+        </div>
+        
+        <div class="question">
+            <label for="question4">4. What instruments do you play or what genre(s) do you specialize in as a musician?</label>
+            <input type="text" id="question4" name="question4" required>
+        </div>
+        
+        <div class="question">
+            <label for="question5">5. As a comic, what style of comedy do you perform? (e.g., stand-up, improvisational, sketch)</label>
+            <input type="text" id="question5" name="question5" required>
+        </div>
+        
+        <div class="question">
+            <label for="question6">6. Are there any social or political issues you often address in your content?</label>
+            <textarea id="question6" name="question6" rows="4" required></textarea>
+        </div>
+        
+        <div class="question">
+            <label for="question7">7. What is the average length of your videos or performances?</label>
+            <input type="text" id="question7" name="question7" required>
+        </div>
+        
+        <div class="question">
+            <label for="question8">8. Do you collaborate with other creators, musicians, or comedians in your content?</label>
+            <input type="text" id="question8" name="question8" required>
+        </div>
+        
+        <div class="question">
+            <label for="question9">9. What is your unique selling point or what sets your content apart from others in your niche?</label>
+            <textarea id="question9" name="question9" rows="4" required></textarea>
+        </div>
+        
+        <div class="question">
+            <label for="question10">10.Are you willing to make video between 15-60 seconds specifically for YouTube Battles? If so, I believ Your Are Ready to Upload Your First Video! Good Luck & Have fun!</label>
+            <input type="text" id="question10" name="question10" required>
+        </div>
+        
+        <!-- Add more questions in a similar format -->
+        <!-- Example:
+        <div class="question">
+            <label for="question3">3. Your Question Here</label>
+            <input type="text" id="question3" name="question3" required>
+        </div>
+        -->
+        <!-- Add the Submit button at the end -->
+        <button class="questionnaire-submit-button" type="submit">Submit</button>
+    </div>
+</body>
+</html>

@@ -12,58 +12,29 @@
         <p>Where musicians duel for supremacy!</p>
     </header>
     <main>
-      <!-- Video Section -->
-      <section class="video-section">
-        <div class="video-container">
-    <h3>Joe Bonamassa</h3>
-<br>
-    <h4>I Play the Blues For You</h4>                
-<iframe class="video-frame" width="720" height="480" src="https://www.youtube.com/embed/yMNWC57yqNg?start=171&end=213" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-        <div class="vs-symbol"><b><img src="images/Yt Duel VS (1).png" alt=“VS”></b></div>
-        <div class="video-container">
-    <h3>Eric Gales</h3>
-<br>
-    <h4>To Close to the Fire</h4>
-            <iframe class="video-frame" width="720" height="480" src="https://www.youtube.com/embed/UD7glVRpbUg?start=379&end=433" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-
-    </section>
-<br><br>
+        <!-- Video Section -->
+        <section class="video-section">
+            <div class="video-container">
+                <h3>Joe Bonamassa</h3>
+                <h4>I Play the Blues For You</h4>
+                <iframe class="video-frame" width="720" height="480" src="https://www.youtube.com/embed/yMNWC57yqNg?start=171&end=213&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="vs-symbol"><b><img src="images/Yt Duel VS (1).png" alt="VS"></b></div>
+            <div class="video-container">
+                <h3>Eric Gales</h3>
+                <h4>To Close to the Fire</h4>
+                <iframe class="video-frame" width="720" height="480" src="https://www.youtube.com/embed/UD7glVRpbUg?start=379&end=433" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+        <br><br>
         <!-- Login and Register Buttons -->
         <section class="auth-buttons">
             <a href="login.html" class="button">Login</a>
             <a href="register.html" class="button register">Get Started Battling</a>
-
         </section>
     </main>
     <footer>
         <p>Copyright © 2023 YouTube Battles</p>
     </footer>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const video1 = document.getElementById('video1');
-        const video2 = document.getElementById('video2');
-
-        // Function to play next video
-        function playNextVideo(currentVideo, nextVideo) {
-            currentVideo.style.display = 'none';
-            nextVideo.style.display = 'block';
-            // For YouTube iframe
-            nextVideo.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-            // For HTML5 video tag, use nextVideo.play();
-        }
-
-        // Event listener for when video1 ends
-        video1.addEventListener('ended', function() {
-            playNextVideo(video1, video2);
-        });
-
-        // Autoplay video1 on page load
-        // For YouTube iframe
-        video1.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-        // For HTML5 video tag, use video1.play();
-    });
-</script>
 </body>
 </html>
