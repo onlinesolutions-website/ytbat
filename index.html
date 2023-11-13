@@ -40,5 +40,30 @@
     <footer>
         <p>Copyright © 2023 YouTube Battles</p>
     </footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const video1 = document.getElementById('video1');
+        const video2 = document.getElementById('video2');
+
+        // Function to play next video
+        function playNextVideo(currentVideo, nextVideo) {
+            currentVideo.style.display = 'none';
+            nextVideo.style.display = 'block';
+            // For YouTube iframe
+            nextVideo.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+            // For HTML5 video tag, use nextVideo.play();
+        }
+
+        // Event listener for when video1 ends
+        video1.addEventListener('ended', function() {
+            playNextVideo(video1, video2);
+        });
+
+        // Autoplay video1 on page load
+        // For YouTube iframe
+        video1.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+        // For HTML5 video tag, use video1.play();
+    });
+</script>
 </body>
 </html>
