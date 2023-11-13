@@ -1,18 +1,3 @@
-// Firebase configuration
-const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_AUTH_DOMAIN",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID",
-    measurementId: "YOUR_MEASUREMENT_ID"
-};
-
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-
 // User Registration
 document.getElementById('registrationForm').onsubmit = function(event) {
     event.preventDefault();
@@ -21,11 +6,12 @@ document.getElementById('registrationForm').onsubmit = function(event) {
     var email = document.getElementById('email').value;
     // Add more fields as necessary
 
-    // Add user to Firestore
+    // Add user to Firestore with initial token count
     db.collection("users").add({
         username: username,
         email: email,
-        tokens: 60, // Initial token count
+        tokens: 30, // Initial token count
+        tokensSpent: 0, // Initial tokens spent
         createdAt: firebase.firestore.FieldValue.serverTimestamp()
     }).then(() => {
         alert("User registered successfully!");
@@ -59,7 +45,7 @@ document.getElementById('videoSubmissionForm').addEventListener('submit', functi
         console.error("Error submitting video: ", error);
         alert("Video submission failed. Please try again.");
     });
-});
+};
 
 // Search Function (Placeholder - Implement as needed)
 function performSearch() {
@@ -87,4 +73,51 @@ function updateAdminDashboard() {
         });
 }
 
-// Call updateAdminDashboard as needed, e.g., at the end of the day or after an event
+// Deduct a token when a user votes
+function deductToken(userId) {
+    db.collection("users").doc(userId).get().then((doc) => {
+        if (doc.exists) {
+            let userData = doc.data();
+            if (userData.tokens > 0) {
+                db.collection("users").doc(userId).update({
+                    tokens: firebase.firestore.FieldValue.increment(-1),
+                    tokensSpent: firebase.firestore.FieldValue.increment(1)
+                }).then(() => {
+                    alert("Vote cast successfully!");
+                    updateProfileUI(userId);
+                });
+            } else {
+                alert("You do not have enough tokens to vote.");
+            }
+        } else {
+            console.error("User not found");
+        }
+    }).catch((error) => {
+        console.error("Error: ", error);
+    });
+}
+
+// Update the profile UI with token information
+function updateProfileUI(userId) {
+    db.collection("users").doc(userId).get().then((doc) => {
+        if (doc.exists) {
+            let userData = doc.data();
+            document.getElementById('tokensAvailable').textContent = userData.tokens;
+            document.getElementById('tokensSpent').textContent = userData.tokensSpent;
+        } else {
+            console.error("User not found");
+        }
+    }).catch((error) => {
+        console.error("Error: ", error);
+    });
+}
+
+// Initialize event listeners for vote buttons
+document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('.vote-button').forEach(button => {
+        button.addEventListener('click', function() {
+            let userId = "user_id_here"; // Replace with actual user ID
+            deductToken(userId);
+        });
+    });
+});
