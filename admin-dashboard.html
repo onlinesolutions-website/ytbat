@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Music Battles</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="battle.html">Battle</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="admin-dashboard">
+            <h2>Admin Dashboard</h2>
+            <div class="search-section">
+                <input type="text" id="searchInput" placeholder="Search by Username, Email, Phone, or Video Link">
+                <button onclick="performSearch()">Search</button>
+            </div>
+            <div class="data-display">
+                <!-- Data display sections (tables or lists) will be here -->
+            </div>
+        </div>
+        <div class="battle-reports-container">
+            <h2>Battle Reports</h2>
+            <table class="battle-reports-table">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Video Link</th>
+                        <th>Category</th>
+                        <th>Skill Level</th>
+                        <th>Votes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Example Row -->
+                    <tr>
+                        <td>Username1</td>
+                        <td><a href="https://www.youtube.com/watch?v=example">Video 1</a></td>
+                        <td>Rock</td>
+                        <td>Expert</td>
+                        <td>123 Votes</td>
+                    </tr>
+                    <!-- Additional rows will be added here manually -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <p>Copyright © 2023 Music Battles</p>
+    </footer>
+</body>
+</html>

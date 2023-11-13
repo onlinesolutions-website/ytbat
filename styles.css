@@ -1,0 +1,260 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e7e7e7;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #c4302b;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    text-align: center;
+    min-height: calc(100% - 160px); /* Adjust based on header and footer height */
+}
+
+/* Footer */
+footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    width: 100%;
+}
+
+/* Navigation Bar */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: black;
+}
+
+nav ul li a:active {
+    color: grey;
+}
+
+/* Form Container */
+.form-container, .profile-container {
+    background-color: white;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 1280px;
+}
+
+.form-container h2, .profile-container h2 {
+    color: #c4302b;
+    margin-bottom: 20px;
+}
+
+/* Form Elements */
+form input[type='text'], form input[type='email'], form input[type='password'], 
+.profile-edit-form input, .profile-edit-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+form button, .profile-edit-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #c4302b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover, .profile-edit-form button:hover {
+    background-color: #c4302b;
+}
+
+/* Profile Section */
+.profile-info, .profile-edit-form {
+    text-align: center;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+/* Video Section */
+.video-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-top: 50px;
+}
+
+.video-container {
+    flex: 0 0 auto;
+    margin: 10px;
+}
+
+.vs-symbol {
+    font-size: 4rem;
+    margin: 0 20px;
+}
+
+.video-container iframe, .video-frame {
+    width: 720px;
+    height: 480px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Button Styles */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #c4302b;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background-color: #000000;
+}
+
+/* Battle Reports Table */
+.battle-reports-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.battle-reports-table th, .battle-reports-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.battle-reports-table th {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.battle-reports-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.battle-reports-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.battle-reports-table a {
+    color: #0275d8;
+    text-decoration: none;
+}
+
+.battle-reports-table a:hover {
+    text-decoration: underline;
+}
+
+/* Admin Dashboard */
+.admin-dashboard {
+    padding: 20px;
+}
+
+.search-section {
+    margin-bottom: 20px;
+}
+
+.search-section input[type="text"] {
+    padding: 10px;
+    margin-right: 10px;
+    width: 300px;
+}
+
+.search-section button {
+    padding: 10px 15px;
+    background-color: #c4302b;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.search-section button:hover {
+    background-color: #c4302b;
+}
+
+/* Adjustments for form spacing and layout */
+.profile-container .forms-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.profile-container .profile-edit-form, .profile-container .video-submission-form {
+    flex: 1;
+    margin: 0 10px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensuring profile edit/info section is displayed */
+.profile-info {
+    margin-bottom: 20px; /* Add space below profile info */
+}
+
+/* Adding padding above the submit button */
+form .submit-button {
+    margin-top: 20px; /* Space above the submit button */
+}
+button {
+    padding: 10px 15px;
+    background-color: #ffffff;
+    color: #c4302b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+ 
+}
+button:hover {
+    background-color: #a3201d;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Music Battles</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+           </ul>
+        </nav>
+        <button onclick="goBack()">Go Back</button> </header>
+    <main>
+
+<br>
+ <div class="video-container">
+    <h3>Welcome to Youtube Battles</h3>
+    <h4>Watch the 15 second Video Below to see how it works!</h4>
+            <iframe class="video-frame" width="720" height="480" src="https://www.youtube.com/embed/UD7glVRpbUg?start=379&end=433" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<br>
+
+        <div class="form-container">
+            <h2>Create an Account</h2>
+            <form id="registrationForm">
+                <input type="text" id="username" name="username" placeholder="Username" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>Copyright © 2023 Music Battles</p>
+    </footer>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script></body>
+</html>
