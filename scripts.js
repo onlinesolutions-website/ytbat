@@ -121,3 +121,36 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     });
 });
+// Initialize Stripe; replace with your own publishable key
+const stripe = Stripe('your_stripe_publishable_key');
+
+document.querySelectorAll('.purchase-button').forEach(button => {
+    button.addEventListener('click', (e) => {
+        const amount = e.target.getAttribute('data-amount');
+        const price = e.target.getAttribute('data-price');
+
+        // Create a new checkout session
+        fetch('/create-checkout-session', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                amount: amount,
+                price: price
+            }),
+        })
+        .then(response => response.json())
+        .then(session => {
+            return stripe.redirectToCheckout({ sessionId: session.id });
+        })
+        .then(result => {
+            if (result.error) {
+                alert(result.error.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+});
