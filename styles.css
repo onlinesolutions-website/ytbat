@@ -182,7 +182,7 @@ form button:hover, .profile-edit-form button:hover {
 .video-container .vote-button {
     display: block; /* Make the button a block element */
     width: auto; /* Auto width based on content */
-    padding: 10px 20px;
+    padding: 20px 120px;
     margin: 20px auto; /* Center the button */
     background-color: #c4302b;
     color: white;
@@ -332,5 +332,5 @@ button:hover {
 }
 
 .purchase-button:hover {
-    background-color: #45a049;
+    background-color: #000000;
 }
