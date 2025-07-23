@@ -1,0 +1,35 @@
+<%- include('partials/header', { user }) %>
+<h2>Influencer Posts</h2>
+<% posts.forEach(p => { %>
+  <div class="post">
+    <p><strong>Type:</strong> <%= p.type %></p>
+    <% if (p.type === 'video') { %>
+      <p><iframe width="560" height="315" src="<%= p.content %>" frameborder="0" allowfullscreen></iframe></p>
+    <% } else if (p.type === 'image') { %>
+      <img src="<%= p.content %>" alt="image" width="300">
+    <% } else { %>
+      <p><%= p.content %></p>
+    <% } %>
+    <p>Hearts: <%= p.hearts %></p>
+    <% if (user && user.role === 'fan') { %>
+    <form action="/posts/<%= p.id %>/heart" method="POST">
+      <button type="submit">Heart</button>
+    </form>
+    <form action="/posts/<%= p.id %>/comment" method="POST">
+      <input type="text" name="comment" placeholder="Comment">
+      <button type="submit">Add Comment</button>
+    </form>
+    <form action="/posts/<%= p.id %>/tip" method="POST">
+      <input type="number" name="amount" placeholder="Tip amount" step="0.01" required>
+      <input type="text" name="message" placeholder="Message">
+      <button type="submit">Tip</button>
+    </form>
+    <% } %>
+    <div class="comments">
+      <% p.comments.forEach(c => { %>
+        <p><%= c.text %></p>
+      <% }) %>
+    </div>
+  </div>
+<% }) %>
+<%- include('partials/footer') %>
