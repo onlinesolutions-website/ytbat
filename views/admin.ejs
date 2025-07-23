@@ -1,0 +1,21 @@
+<%- include('partials/header', { user }) %>
+<h2>Admin Dashboard</h2>
+<h3>Users</h3>
+<ul>
+<% users.forEach(u => { %>
+  <li><%= u.username %> (<%= u.role %>)</li>
+<% }) %>
+</ul>
+<h3>Posts</h3>
+<ul>
+<% posts.forEach(p => { %>
+  <li><%= p.type %> - <%= p.content %> | Hearts: <%= p.hearts %></li>
+<% }) %>
+</ul>
+<h3>Tips</h3>
+<ul>
+<% tips.forEach(t => { %>
+  <li>Post <%= t.postId %> - from <%= t.fanId %> - $<%= t.amount %> - hearted: <%= t.hearted %></li>
+<% }) %>
+</ul>
+<%- include('partials/footer') %>
