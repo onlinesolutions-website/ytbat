@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "functions": {
+    "api/mac.js": {
+      "runtime": "nodejs20.x"
+    }
+  },
+  "routes": [
+    { "src": "/api/mac", "dest": "/api/mac.js" }
+  ]
+}

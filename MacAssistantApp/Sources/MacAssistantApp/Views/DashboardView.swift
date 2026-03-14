@@ -18,7 +18,7 @@ public struct DashboardView: View {
                         .background(.thinMaterial)
                         .clipShape(RoundedRectangle(cornerRadius: 12))
 
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .leading, spacing: 8) {
                         Text("Ask Mac")
                             .font(.headline)
                         HStack {
@@ -28,7 +28,17 @@ public struct DashboardView: View {
                                 viewModel.submitPrompt()
                             }
                             .buttonStyle(.borderedProminent)
+                            .disabled(viewModel.isLoading)
                         }
+
+                        if viewModel.isLoading {
+                            ProgressView("Mac is preparing your response...")
+                                .font(.footnote)
+                        }
+
+                        Text("Tip: this client can connect to a Vercel backend endpoint at /api/mac.")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
                     }
 
                     Text("Core Features")
